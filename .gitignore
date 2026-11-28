@@ -1,0 +1,22 @@
+# 忽略真实配置与凭据，只提交模板
+
+# 系统
+.DS_Store
+
+# 真实配置（含订阅地址、出口账号密码），绝不提交
+profiles.yaml
+clash-verge.yaml
+clash-verge-check.yaml
+config.yaml
+verge.yaml
+*.bak
+*.sqlite3
+
+# 本地生成/临时
+/tmp/
+__pycache__/
+*.pyc
+
+# 编辑器
+.vscode/
+.idea/

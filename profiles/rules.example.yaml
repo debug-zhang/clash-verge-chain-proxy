@@ -1,0 +1,13 @@
+# 直连规则模板 —— 对应 Verge 的「Rules 增强」（profiles/<uid>.yaml）
+#
+# 某些站点（内网服务、文档站、特定 CDN 域名）走了代理链反而打不开，
+# 用 prepend 把它们钉在 DIRECT，优先级高于订阅自带规则。
+#
+# 换成自己实际需要的域名即可，删光了也不影响链式本身。
+
+prepend:
+  - 'DOMAIN-SUFFIX,example-internal.com,DIRECT'
+  - 'DOMAIN-SUFFIX,example-cdn.com,DIRECT'
+
+append: []
+delete: []

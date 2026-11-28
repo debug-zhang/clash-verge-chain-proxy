@@ -1,0 +1,27 @@
+# 出口节点模板 —— 对应 Verge 的「Proxies 增强」（profiles/<uid>.yaml）
+#
+# 这里是链式的第二跳：静态住宅 / 独享 IP 出口。
+# 服务端通常限制源 IP，只接受来自第一跳（订阅节点）的连接，
+# 所以本机直连会立刻被关闭 —— 这是设计如此，不是故障。
+#
+# 注意：故意不写 dialer-proxy。
+# 链式只由 Script 增强注入，单一来源，避免两处互相覆盖。
+
+prepend:
+  - type: 'socks5'
+    name: 'Japan'
+    server: '203.0.113.10'     # ← 换成真实出口 IP
+    port: 443
+    username: 'REPLACE_ME'
+    password: 'REPLACE_ME'
+
+  # 需要多个地区就再复制一份；name 必须与脚本里的 CHAIN 数组对应
+  # - type: 'socks5'
+  #   name: 'US'
+  #   server: '198.51.100.20'
+  #   port: 443
+  #   username: 'REPLACE_ME'
+  #   password: 'REPLACE_ME'
+
+append: []
+delete: []
